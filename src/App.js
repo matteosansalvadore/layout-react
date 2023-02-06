@@ -1,5 +1,7 @@
 import styled from "styled-components";
+import AggiungiCitta from "./components/AggiungiCitta";
 import Cover from "./components/Cover";
+import Today from "./components/Today";
 
 const MainComponent = styled.div`
   width: 100vw;
@@ -29,8 +31,11 @@ function App() {
   <MainComponent>
     <LeftColumn>
       <Cover />
+      <Today />
     </LeftColumn>
-    <RightColumn></RightColumn>
+    <RightColumn>
+      <AggiungiCitta />
+    </RightColumn>
   </MainComponent>
   )
 }
