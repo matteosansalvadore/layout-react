@@ -15,7 +15,7 @@ const MainComponent = styled.div`
 `;
 
 const LeftColumn = styled.div`
-  background: green;
+  background: rgb(229, 231, 235);
   flex: 2;
   padding: 10px;
 `;
