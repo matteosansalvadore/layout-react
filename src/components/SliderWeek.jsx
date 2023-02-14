@@ -8,6 +8,7 @@ import Swiper, { Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import {cities} from "../utils/mockdata.js"
 
 const Wrapper = styled.div`
   width: 100%;
@@ -42,8 +43,8 @@ const TopText = styled.p`
   margin-top: 4px;
 `
 
-const ImageWeather = styled.p`
-  width: 40px;
+const ImageWeather = styled.img`
+  width: 80px;
 `
 
 const Temp = styled.p`
@@ -55,6 +56,7 @@ const Temp = styled.p`
 
 
 export default function Slider () {
+
   return (
     // <!-- Slider main container -->
     <Wrapper class="swiper">
@@ -62,11 +64,13 @@ export default function Slider () {
       <div class="swiper-wrapper">
         {/* <!-- Slides --> */}
         <div class="swiper-slide">
+        {/* {cities.map(city => ( */}
           <CityColumn>
             <TopText>Friday</TopText>
             <Temp>12</Temp>
-            <ImageWeather></ImageWeather>
+            <ImageWeather src="./cloud.png"></ImageWeather>
           </CityColumn>
+          {/*  ))} */}
         </div>
         <div class="swiper-slide">
           <CityColumn>
@@ -103,6 +107,7 @@ export default function Slider () {
             <ImageWeather></ImageWeather>
           </CityColumn>
         </div>
+
       </div>
       {/* <!-- If we need pagination --> */}
       <div class="swiper-pagination"></div>

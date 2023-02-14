@@ -21,7 +21,8 @@ export const cities = [
 
 export const tabs = [
   {
-    title: "week"
+    title: "week",
+
   },
   {
     title: "month"

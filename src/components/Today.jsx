@@ -5,6 +5,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import Slider from "./SliderMonth"
 import SliderWeek from "./SliderWeek"
+import WidgetWeatherToday from "./WidgetWeatherToday";
 
 
 const Wrapper2 = styled.div`
@@ -14,13 +15,13 @@ const Wrapper2 = styled.div`
 `
 
 const NowTempWidget = styled.div`
-  width: 50%;
+  width: 40%;
   height: 500px;
-
+  margin-right: 30px;
 `
 
 const WeekWidget = styled.div`
-  width: 50%;
+  width: 60%;
   height: 500px;
 `
 
@@ -73,13 +74,12 @@ const PanelWrapper = styled.div`
 
 `
 
-
-
-
 export default function Today (){
   return (
     <Wrapper2>
-      <NowTempWidget></NowTempWidget>
+      <NowTempWidget>
+        <WidgetWeatherToday></WidgetWeatherToday>
+      </NowTempWidget>
       <WeekWidget>
       <StyledTabs>
         <TabList>
