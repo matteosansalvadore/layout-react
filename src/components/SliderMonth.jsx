@@ -3,11 +3,6 @@ import styled from "styled-components"
 // import Swiper styles
 import 'swiper/css';
 // core version + navigation, pagination modules:
-import Swiper, { Pagination } from 'swiper';
-// import Swiper and modules styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
 
 const Wrapper = styled.div`
   width: 100%;

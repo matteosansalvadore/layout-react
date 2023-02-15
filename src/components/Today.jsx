@@ -8,6 +8,7 @@ import SliderWeek from "./SliderWeek"
 import WidgetWeatherToday from "./WidgetWeatherToday";
 
 
+
 const Wrapper2 = styled.div`
   display: flex;
   margin-top: 40px;
@@ -36,10 +37,10 @@ const StyledTabs = styled(Tabs)`
     border-radius: 15px 15px 0 0;
     margin: 0;
     height: 100%;
-    overflow: hidden;
     border: none;
     font-size: 21px;
     font-weight: bold;
+    width: 100%;
 
       .react-tabs__tab {
       border-radius: 15px 15px 0 0;
@@ -62,16 +63,21 @@ const StyledTabs = styled(Tabs)`
       padding: 25px;
 
     }
+`
 
+const StyledTabPanel = styled(TabPanel)`
+  width: 100%;
+  max-width: 100%;
 `
 
 const PanelWrapper = styled.div`
   background: linear-gradient(0deg, #77b9f5 0%, #5374E7 100%);
-  /* height: 400px; */
-  display: block;
+  overflow: hidden;
+  flex-grow: 1;
   width: 100%;
+  max-width: 650px;
   border-radius: 0 15px 15px 15px;
-
+  position: relative;
 `
 
 export default function Today (){
@@ -88,12 +94,12 @@ export default function Today (){
         </TabList>
 
         <PanelWrapper>
-          <TabPanel>
+          <StyledTabPanel>
             <SliderWeek />
-          </TabPanel>
-          <TabPanel>
+          </StyledTabPanel>
+          <StyledTabPanel>
             <Slider />
-          </TabPanel>
+          </StyledTabPanel>
         </PanelWrapper>
 
       </StyledTabs>

@@ -1,20 +1,23 @@
 import React from "react"
 import styled from "styled-components"
 // import Swiper styles
+import { Pagination, A11y } from 'swiper';
+import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-// core version + navigation, pagination modules:
-import Swiper, { Pagination } from 'swiper';
-// import Swiper and modules styles
-import 'swiper/css';
-import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import {cities} from "../utils/mockdata.js"
+// import {cities} from "../utils/mockdata.js"
+import {days} from "../utils/mockdata.js"
+
 
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-  overflow: visible;
+  position: relative;
+  overflow: hidden;
 
+  .swiper {
+    width: 100%;
+  }
 
   .swiper-wrapper{
     /* overflow-y: scroll; */
@@ -23,7 +26,7 @@ const Wrapper = styled.div`
   .swiper-slide {
     background: linear-gradient(0deg, #77b9f5 0%, #6A88EB 100%);
     height: 100%;
-    width: 120px;
+    width: auto;
     margin: 10px;
     border-radius: 15px;
     box-shadow: rgb(0 0 0 / 17%) 5px 10px 20px 0px;
@@ -54,66 +57,80 @@ const Temp = styled.p`
   margin-bottom: 4px;
 `
 
-
 export default function Slider () {
-
   return (
-    // <!-- Slider main container -->
-    <Wrapper class="swiper">
-      {/* <!-- Additional required wrapper --> */}
-      <div class="swiper-wrapper">
-        {/* <!-- Slides --> */}
-        <div class="swiper-slide">
-        {/* {cities.map(city => ( */}
-          <CityColumn>
-            <TopText>Friday</TopText>
-            <Temp>12</Temp>
-            <ImageWeather src="./cloud.png"></ImageWeather>
-          </CityColumn>
-          {/*  ))} */}
-        </div>
-        <div class="swiper-slide">
-          <CityColumn>
-            <TopText>Friday</TopText>
-            <Temp>12</Temp>
-            <ImageWeather></ImageWeather>
-          </CityColumn>
-        </div>
-        <div class="swiper-slide">
-          <CityColumn>
-            <TopText>Friday</TopText>
-            <Temp>12</Temp>
-            <ImageWeather></ImageWeather>
-          </CityColumn>
-        </div>
-        <div class="swiper-slide">
-          <CityColumn>
-            <TopText>Friday</TopText>
-            <Temp>12</Temp>
-            <ImageWeather></ImageWeather>
-          </CityColumn>
-        </div>
-        <div class="swiper-slide">
-          <CityColumn>
-            <TopText>Friday</TopText>
-            <Temp>12</Temp>
-            <ImageWeather></ImageWeather>
-          </CityColumn>
-        </div>
-        <div class="swiper-slide">
-          <CityColumn>
-            <TopText>Friday</TopText>
-            <Temp>12</Temp>
-            <ImageWeather></ImageWeather>
-          </CityColumn>
-        </div>
 
-      </div>
+    // <!-- Slider main container -->
+    <Wrapper>
+    <Swiper
+        modules={[Pagination]}
+        spaceBetween={30}
+        slidesPerView={2}
+        slidesPerGroup={2}
+        grabCursor
+        breakpoints={{
+          620: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+          },
+        }}
+        pagination={{
+          clickable: true,
+        }}
+      >
+      {/* <!-- Additional required wrapper --> */}
+      {days.map(date => (
+        <SwiperSlide>
+
+          <CityColumn>
+            <TopText>{date.day}</TopText>
+            <Temp>{date.temperature}</Temp>
+            {/* <ImageWeather><img src={date.image} alt="Weather Icon" /></ImageWeather> */}
+          </CityColumn>
+
+        </SwiperSlide>
+        ))}
+        {/* <SwiperSlide>
+          <CityColumn>
+            <TopText>Friday</TopText>
+            <Temp>12</Temp>
+            <ImageWeather></ImageWeather>
+          </CityColumn>
+        </SwiperSlide>
+        <SwiperSlide>
+          <CityColumn>
+            <TopText>Friday</TopText>
+            <Temp>12</Temp>
+            <ImageWeather></ImageWeather>
+          </CityColumn>
+        </SwiperSlide>
+        <SwiperSlide>
+          <CityColumn>
+            <TopText>Friday</TopText>
+            <Temp>12</Temp>
+            <ImageWeather></ImageWeather>
+          </CityColumn>
+        </SwiperSlide>
+        <SwiperSlide>
+          <CityColumn>
+            <TopText>Friday</TopText>
+            <Temp>12</Temp>
+            <ImageWeather></ImageWeather>
+          </CityColumn>
+        </SwiperSlide>
+        <SwiperSlide>
+          <CityColumn>
+            <TopText>Friday</TopText>
+            <Temp>12</Temp>
+            <ImageWeather></ImageWeather>
+          </CityColumn>
+        </SwiperSlide> */}
       {/* <!-- If we need pagination --> */}
       <div class="swiper-pagination"></div>
 
       {/* Scrollbar */}
       <div class="swiper-scrollbar"></div>
+    </Swiper>
     </Wrapper>
   )
 }
