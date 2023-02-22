@@ -1,15 +1,15 @@
 import React from 'react'
 import styled from 'styled-components';
+import {cities} from "../utils/mockdata.js"
 
 const Wrapper = styled.div`
   position: relative;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
 `;
 
 const CoverComponent = styled.div`
-  background-image: url("images/Torino.jpeg");
+  background-image: linear-gradient(120deg, rgba(255, 255, 255, 0.35), rgba(255, 255, 255, 0)), url("images/cover-Turin.jpeg");
   width: 100%;
   height: 450px;
   background-position: center;
@@ -18,6 +18,7 @@ const CoverComponent = styled.div`
   display: flex;
   align-items: center;
   padding-left: 150px;
+  box-shadow: rgb(0 0 0 / 17%) 5px 10px 20px 0px;
 `;
 
 const SideWidget = styled.div`
@@ -27,7 +28,17 @@ const SideWidget = styled.div`
   background: #577CE9;
   margin-left: -10px;
   border-radius: 0 25px 25px 0;
+  opacity: 1;
+  transition: opacity 0.2s ease 0s;
+  box-shadow: rgb(0 0 0 / 17%) 5px 10px 20px 0px;
 `;
+
+const TempSideWideget = styled.p`
+  font-size: 50px;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+`
 
 const MainText = styled.div`
   height: 300px;
@@ -59,7 +70,11 @@ const Cover = () => {
         <WeatherCondition>Clear</WeatherCondition>
       </MainText>
     </CoverComponent>
-    <SideWidget></SideWidget>
+    <SideWidget>
+      {cities.slice(0,1).map(city => (
+      <TempSideWideget>{city.temperature}°</TempSideWideget>
+      ))}
+    </SideWidget>
     </Wrapper>
   )
 }

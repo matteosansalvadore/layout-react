@@ -3,6 +3,7 @@ import AggiungiCitta from "./components/AggiungiCitta";
 import Cover from "./components/Cover";
 import Today from "./components/Today";
 
+
 const MainComponent = styled.div`
   width: 100vw;
   height: 100vh;
@@ -21,7 +22,7 @@ const LeftColumn = styled.div`
 `;
 
 const RightColumn = styled.div`
-  background: yellow;
+  background-color: rgb(229, 231, 235);
   flex: 1;
   padding: 10px;
 `;

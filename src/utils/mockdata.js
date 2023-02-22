@@ -1,27 +1,32 @@
-// import cloud from "./MockImages/cloud.png"
-// import rain from "../../public/Images/rain.png"
-// import storm from "../../public/Images/storm.png"
-// import sun from "../../public/Images/sun.png"
-// import sunny from "../../public/Images/sunny.png"
+const weatherImages = {
+  cloud: "./Images/cloud.png",
+  sun: "./Images/sun.png",
+  rain: "./Images/rain.png",
+  storm: "./Images/storm.png",
+  sunny: "./Images/sunny.png"
+}
 
 export const cities = [
   {
     name: "Torino",
     temperature: 4,
     country: "Italy",
-    weather: "cloudy"
+    weather: "cloudy",
+    image: weatherImages.cloud
   },
   {
     name: "Rome",
     temperature: 10,
     country: "Italy",
-    weather: "sunny"
+    weather: "clouds",
+    image: weatherImages.cloud
   },
   {
     name: "London",
     temperature: -2,
     country: "England",
-    weather: "snow"
+    weather: "sun",
+    image: weatherImages.sun
   }
 ]
 
@@ -83,32 +88,40 @@ export const days = [
   {
     day: "Monday",
     temperature: 5,
-    // image: cloud
+    image: weatherImages.cloud
   },
   {
     day: "Tuesday",
     temperature: 3,
-    // image: rain
+    image: weatherImages.rain
   },
   {
     day: "Wednesday",
     temperature: 10,
-    // image: storm
+    image: weatherImages.storm
   },
   {
     day: "Thursday",
     temperature: 9,
-    // image: sun
+    image: weatherImages.sun
   },
   {
     day: "Friday",
     temperature: 14,
-    // image: sunny
+    image: weatherImages.sunny
   },
   {
     day: "Saturday",
     temperature: 13,
-    // image: sunny
+    image: weatherImages.sunny
   },
 
+]
+
+export const AggiungiCitta = [
+  {
+    city: "Turin",
+    date: "Monday 15, March",
+    hour: 12
+  },
 ]
