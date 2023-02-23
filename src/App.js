@@ -5,18 +5,18 @@ import Search from "./components/Search";
 import Today from "./components/Today";
 import Localization from "./components/Localisation";
 
-
 const MainComponent = styled.div`
   width: 100vw;
   display: flex;
   flex-direction: column;
-  @media (min-width:768px){
+  @media (min-width: 768px) {
     flex-direction: row;
   }
 `;
 
 const LeftColumn = styled.div`
   background: rgb(229, 231, 235);
+  width: 50%;
   flex: 2;
   padding: 10px;
 `;
@@ -29,18 +29,18 @@ const RightColumn = styled.div`
 
 function App() {
   return (
-  <MainComponent>
-    <LeftColumn>
-      <Cover />
-      <Today />
-    </LeftColumn>
-    <RightColumn>
-      <AggiungiCitta />
-      <Search />
-      <Localization />
-    </RightColumn>
-  </MainComponent>
-  )
+    <MainComponent>
+      <LeftColumn>
+        <Cover />
+        <Today />
+      </LeftColumn>
+      <RightColumn>
+        <AggiungiCitta />
+        <Search />
+        <Localization />
+      </RightColumn>
+    </MainComponent>
+  );
 }
 
 export default App;
