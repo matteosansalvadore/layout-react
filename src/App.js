@@ -1,13 +1,13 @@
 import styled from "styled-components";
 import AggiungiCitta from "./components/AggiungiCitta";
 import Cover from "./components/Cover";
+import Search from "./components/Search";
 import Today from "./components/Today";
+import Localization from "./components/Localisation";
 
 
 const MainComponent = styled.div`
   width: 100vw;
-  height: 100vh;
-  background: blue;
   display: flex;
   flex-direction: column;
   @media (min-width:768px){
@@ -36,6 +36,8 @@ function App() {
     </LeftColumn>
     <RightColumn>
       <AggiungiCitta />
+      <Search />
+      <Localization />
     </RightColumn>
   </MainComponent>
   )

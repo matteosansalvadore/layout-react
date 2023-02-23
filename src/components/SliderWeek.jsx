@@ -17,6 +17,9 @@ const Wrapper = styled.div`
 
   .swiper {
     width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px 20px 50px 20px;
   }
 
   .swiper-wrapper{
@@ -47,7 +50,7 @@ const TopText = styled.p`
 `
 
 const ImageWeather = styled.img`
-  width: 80px;
+  width: 100px;
 `
 
 const Temp = styled.p`
@@ -85,46 +88,12 @@ export default function Slider () {
           <CityColumn>
             <TopText>{date.day}</TopText>
             <Temp>{date.temperature}</Temp>
-            {/* <ImageWeather><img src={date.image} alt="Weather Icon" /></ImageWeather> */}
+            <ImageWeather src={date.image}></ImageWeather>
           </CityColumn>
 
         </SwiperSlide>
         ))}
-        {/* <SwiperSlide>
-          <CityColumn>
-            <TopText>Friday</TopText>
-            <Temp>12</Temp>
-            <ImageWeather></ImageWeather>
-          </CityColumn>
-        </SwiperSlide>
-        <SwiperSlide>
-          <CityColumn>
-            <TopText>Friday</TopText>
-            <Temp>12</Temp>
-            <ImageWeather></ImageWeather>
-          </CityColumn>
-        </SwiperSlide>
-        <SwiperSlide>
-          <CityColumn>
-            <TopText>Friday</TopText>
-            <Temp>12</Temp>
-            <ImageWeather></ImageWeather>
-          </CityColumn>
-        </SwiperSlide>
-        <SwiperSlide>
-          <CityColumn>
-            <TopText>Friday</TopText>
-            <Temp>12</Temp>
-            <ImageWeather></ImageWeather>
-          </CityColumn>
-        </SwiperSlide>
-        <SwiperSlide>
-          <CityColumn>
-            <TopText>Friday</TopText>
-            <Temp>12</Temp>
-            <ImageWeather></ImageWeather>
-          </CityColumn>
-        </SwiperSlide> */}
+
       {/* <!-- If we need pagination --> */}
       <div class="swiper-pagination"></div>
 

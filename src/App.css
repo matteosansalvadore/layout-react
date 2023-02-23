@@ -1,6 +1,12 @@
 body,
 html {
   font-family: 'Poppins', sans-serif;
+  background-color: rgb(229, 231, 235);
+}
+
+* {
+  box-sizing: border-box;
+
 }
 
 .App {

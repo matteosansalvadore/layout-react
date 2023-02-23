@@ -31,6 +31,9 @@ const SideWidget = styled.div`
   opacity: 1;
   transition: opacity 0.2s ease 0s;
   box-shadow: rgb(0 0 0 / 17%) 5px 10px 20px 0px;
+  display: flex;
+  justify-content: center; /* Align child elements horizontally */
+  align-items: center;
 `;
 
 const TempSideWideget = styled.p`
@@ -38,6 +41,17 @@ const TempSideWideget = styled.p`
   color: white;
   text-align: center;
   font-weight: bold;
+  margin: 0;
+`
+
+const ContainerSideWidget = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const ImageWeather = styled.img`
+  width: 140px;
 `
 
 const MainText = styled.div`
@@ -72,7 +86,10 @@ const Cover = () => {
     </CoverComponent>
     <SideWidget>
       {cities.slice(0,1).map(city => (
-      <TempSideWideget>{city.temperature}°</TempSideWideget>
+      <ContainerSideWidget>
+        <TempSideWideget>{city.temperature}°</TempSideWideget>
+        <ImageWeather src={city.image}></ImageWeather>
+      </ContainerSideWidget>
       ))}
     </SideWidget>
     </Wrapper>

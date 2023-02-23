@@ -3,7 +3,7 @@ import styled from "styled-components"
 import { tabs } from "../utils/mockdata"
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import Slider from "./SliderMonth"
+// import Slider from "./SliderMonth"
 import SliderWeek from "./SliderWeek"
 import WidgetWeatherToday from "./WidgetWeatherToday";
 
@@ -31,6 +31,7 @@ const StyledTabs = styled(Tabs)`
   flex-direction: column;
   align-items: flex-start;
 
+
   .react-tabs__tab-list {
     background: white;
     display: inline-flex;
@@ -38,7 +39,7 @@ const StyledTabs = styled(Tabs)`
     margin: 0;
     height: 100%;
     border: none;
-    font-size: 21px;
+    font-size: 28px;
     font-weight: bold;
     width: 100%;
 
@@ -47,6 +48,7 @@ const StyledTabs = styled(Tabs)`
       border: none;
       font-weight: bold;
       border: none;
+      padding: 20px;
     }
 
     .react-tabs__tab--selected {
@@ -60,14 +62,13 @@ const StyledTabs = styled(Tabs)`
 
   .react-tabs__tab-panel--selected {
       height: 100%;
-      padding: 25px;
-
     }
 `
 
 const StyledTabPanel = styled(TabPanel)`
   width: 100%;
   max-width: 100%;
+  height: 100%;
 `
 
 const PanelWrapper = styled.div`
@@ -76,6 +77,7 @@ const PanelWrapper = styled.div`
   flex-grow: 1;
   width: 100%;
   max-width: 650px;
+  height: 427px;
   border-radius: 0 15px 15px 15px;
   position: relative;
 `
@@ -98,7 +100,7 @@ export default function Today (){
             <SliderWeek />
           </StyledTabPanel>
           <StyledTabPanel>
-            <Slider />
+            <SliderWeek />
           </StyledTabPanel>
         </PanelWrapper>
 

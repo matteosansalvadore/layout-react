@@ -24,6 +24,7 @@ const Measurement = styled.div`
   overflow: hidden;
   color: white;
   position: relative;
+  box-shadow: rgb(0 0 0 / 17%) 5px 10px 20px 0px;
 
   &::after {
     content: " ";
