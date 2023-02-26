@@ -14,7 +14,7 @@ const CoverComponent = styled.div`
       rgba(255, 255, 255, 0.35),
       rgba(255, 255, 255, 0)
     ),
-    url("images/cover-Turin.jpeg");
+    url("Images/cover-Turin.jpeg");
   width: 100%;
   height: 450px;
   background-position: center;
