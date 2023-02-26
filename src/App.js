@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import AggiungiCitta from "./components/AggiungiCitta";
 import Cover from "./components/Cover";
-import Search from "./components/Search";
 import Today from "./components/Today";
-import Localization from "./components/Localisation";
+import WidgetSearch from "./components/WidgetSearch";
 
 const MainComponent = styled.div`
   width: 100vw;
@@ -19,6 +18,13 @@ const LeftColumn = styled.div`
   width: 50%;
   flex: 2;
   padding: 10px;
+
+  @media only screen and (max-width: 768px) {
+    width: 100%;
+    margin-right: 0;
+    width: auto;
+    border: 0;
+  }
 `;
 
 const RightColumn = styled.div`
@@ -36,8 +42,7 @@ function App() {
       </LeftColumn>
       <RightColumn>
         <AggiungiCitta />
-        <Search />
-        <Localization />
+        <WidgetSearch />
       </RightColumn>
     </MainComponent>
   );
